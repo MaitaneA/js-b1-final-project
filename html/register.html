@@ -1,0 +1,50 @@
+<!-- 
+ un formulario con las propiedades de la clase objeto y un botón "Guardar".
+• Al hacer clic se realizarán las siguientes validaciones sobre los campos:
+    i. Nombre, Apellidos, Dirección y Usuario no podrán estar vacíos. Y Usuario no puede estar ya dado de alta.
+    ii. Población aparecerá un campo desplegable (las poblaciones/código postal estarán en el fichero datos.js) y el código postal se rellenará automáticamente. En el caso de que se indique antes el código postal, se validará que existe una población con ese código postal.
+    iii. Teléfono y correo electrónico deben ser campos válidos.
+    iv. La contraseña debe contener mínimo 8 caracteres, letras, números y al menos dos caracteres especiales.
+• Cuando las validaciones anteriores sean correctas se guardará la información
+en el localestorage y se abrirá de nuevo la página de login.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <form name="register" id="registerForm" action="">
+    <label for="nombre">Nombre<span style="color: red;">*</span>:</label>
+    <input id="nombre" type="text" required>
+    <label for="apellidos">Apellidos<span style="color: red;">*</span>:</label>
+    <input id="apellidos" type="text" required>
+    <label for="direccion">Dirección<span style="color: red;">*</span>:</label>
+    <input id="direccion" type="text" required>
+    <label for="poblacion">Población:</label>
+    <select id="poblacion" name="poblaciones">
+      <option disabled selected value> -- selecciona población -- </option>
+    </select>
+    <label for="codPostal">Código postal:</label>
+    <input id="codPostal" type="number" min="1000" max="59999" placeholder="39770" title="Código postal en Cantabria">
+    <label for="telefono">Teléfono:</label>
+    <input id="telefono" type="tel" minlength="9" maxlength="9" pattern="(6|7|8|9)\d{8}" title="Introduce número expañol válido (sin el código de país)">
+    <label for="email">Correo electrónico:</label>
+    <input id="email" type="email">
+    <label for="usuario">Usuario<span style="color: red;">*</span>:</label>
+    <input id="usuario" type="text" required/>
+    <label for="contraseña">Contraseña<span style="color: red;">*</span>:</label>
+    <input id="contraseña" type="text" minlength="8" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=(?:.*[@$!%*?&]){2,}).*" title="Longitud mínima: 8 caracteres. Debe contener letras, números y al menos 2 caracteres especiales." required/>
+    <button id="sendForm" type="submit">Guardar</button>                
+    <div id="errores" class="hidden">
+    </div>
+  </form>
+  <script src="../js/clases.js" defer></script>
+  <script src="../js/datos.js" defer></script>
+  <script src="../js/register.js" defer></script>
+</body>
+</html>

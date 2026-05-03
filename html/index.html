@@ -1,0 +1,36 @@
+<!-- Dos campos tipo input con "Usuario" y "Contraseña"
+ Dos botones "Aceptar" y "Nuevo usuario"
+ 
+ Aceptar abre la pagina de productos tras comprobar los datos de usuario son correctos.
+ En caso contrario lanzar un Alert avisando que los datos de usuario son incorrectos 
+ 
+ Hacer click en "Nuevo usuario" abre la página de registro -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <form name="login" id="loginForm" action="">
+    <section>
+        <label for="usuario">Usuario:</label>
+        <input id="usuario" type="text" placeholder="user1" required/>
+    </section>
+    <section>
+        <label for="contraseña">Contraseña:</label>
+        <input id="contraseña" type="text" placeholder="pass1" required/>
+    </section>
+    <section>
+        <button id="sendForm" type="submit">Aceptar</button>
+        <button id="register" type="button">Nuevo usuario</button>
+    </section>
+  </form>
+    <script src="../js/clases.js" defer></script>
+    <script src="../js/index.js" defer></script>
+</body>
+</html>
+
