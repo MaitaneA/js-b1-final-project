@@ -8,6 +8,7 @@ document.getElementById('loginForm').addEventListener("submit", (e) => {
     console.log(contraseña);
 
     const storedUser = localStorage.getItem('u_'+usuario);
+    console.log(storedUser);
 
     if (!storedUser) {
         alert('Usuario no existe.');
