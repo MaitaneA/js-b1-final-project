@@ -7,14 +7,19 @@ document.getElementById('loginForm').addEventListener("submit", (e) => {
     const contraseña = document.getElementById('contraseña').value;
     console.log(contraseña);
 
-    if (JSON.parse(localStorage.getItem('u_'+usuario))._contraseña !== contraseña) {
-        console.log(JSON.parse(localStorage.getItem('u_'+usuario)));
-        console.log(JSON.parse(localStorage.getItem('u_'+usuario))._contraseña);
+    const storedUser = localStorage.getItem('u_'+usuario);
+
+    if (!storedUser) {
+        alert('Usuario no existe.');
+        return;
+    };
+    
+    if (JSON.parse(storedUser)._contraseña !== contraseña) {
         alert('Datos de usuario incorrectos.');
         return;
     };
 
-    window.location.href = "productos.html?user=" + encodeURIComponent(usuario);
+    window.location.href = "products.html?user=" + encodeURIComponent(usuario);
 });
 
 // Botón de Nuevo usuario redirige a la página de registro
