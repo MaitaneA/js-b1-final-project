@@ -80,7 +80,40 @@ class Producto {
         this._enlace = enlace;
     }
 
-    // getters y setters?
+    get nombre() {
+        return this._nombre;
+    }
+
+    get tipo() {
+        return this._tipo;
+    }
+
+    get enlace() {
+        return this._enlace;
+    }
+
+    set nombre(newProductName) {
+        if (!newProductName) return false;
+        
+        this._nombre = newProductName;
+        return true;
+    }
+
+    set tipo(newType) {
+        if (!newType) return false;
+        
+        this._tipo = newType;
+        return true;
+    }
+
+    set enlace(newLink) {
+        const urlPattern = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+        
+        if (!urlPattern.test(newLink)) return false;
+        
+        this._enlace = newLink;
+        return true;
+    }
 }
 
 class Lista {
@@ -94,5 +127,37 @@ class Lista {
         this._productos = [];
     }
 
-    // getters y setters?
+    get usuario() {
+        return this._usuario;
+    }
+
+    get fecha() {
+        return this._fecha;
+    }
+
+    get productos() {
+        return this._productos;
+    }
+
+    set usuario(newUser) {
+        const storedUser = localStorage.getItem('u_'+newUser);
+
+        if (!storedUser) {
+            return false;
+        } else {
+            this._usuario = newUser;
+            return true;
+        }
+    }
+
+    set fecha(newDate) {
+        if (!newDate) return false;
+        
+        this._fecha = newDate;
+        return true;
+    }
+
+    set productos(newProducts) {
+        this._productos = newProducts;
+    }
 }

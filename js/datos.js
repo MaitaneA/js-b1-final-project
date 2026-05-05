@@ -3,12 +3,59 @@
 // datos.js almacenará los objetos correspondientes a los productos que vamos a ofrecer.
 // Los objetos que representan al usuario y la lista de la compra se guardarán utilizando el método localestorage de JavaScript.
 
+// Productos
+const tipos = ["Frutas y vegetales", "Panes y pastas", "Leche y quesos", "Carne y pescado", "Cereales y pastas"];
 
+const datosProductos = [
+  // Frutas y vegetales (8)
+  {nombre: "Manzana", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/415/415682.png"},
+  {nombre: "Plátano", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590685.png"},
+  {nombre: "Tomate", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2909/2909763.png"},
+  {nombre: "Zanahoria", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590702.png"},
+  {nombre: "Lechuga", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713474.png"},
+  {nombre: "Brócoli", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2346/2346998.png"},
+  {nombre: "Fresas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590772.png"},
+  {nombre: "Uvas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590767.png"},
+
+  // Panes y pastas (6)
+  {nombre: "Pan blanco", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png"},
+  {nombre: "Barra de pan", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png"},
+  {nombre: "Croissant", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075976.png"},
+  {nombre: "Espaguetis", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
+  {nombre: "Macarrones", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135623.png"},
+  {nombre: "Pizza", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png"},
+
+  // Leche y quesos (6)
+  {nombre: "Leche", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png"},
+  {nombre: "Queso", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
+  {nombre: "Yogur", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/3050/3050153.png"},
+  {nombre: "Mantequilla", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713475.png"},
+  {nombre: "Nata", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046847.png"},
+  {nombre: "Leche sin lactosa", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png"},
+
+  // Carne y pescado (6)
+  {nombre: "Pollo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046769.png"},
+  {nombre: "Ternera", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075978.png"},
+  {nombre: "Cerdo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1998/1998611.png"},
+  {nombre: "Salmón", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075979.png"},
+  {nombre: "Atún", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046786.png"},
+  {nombre: "Gambas", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713478.png"},
+
+  // Cereales y pastas (5)
+  {nombre: "Arroz", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046771.png"},
+  {nombre: "Avena", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046770.png"},
+  {nombre: "Cereales desayuno", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
+  {nombre: "Quinoa", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046768.png"},
+  {nombre: "Cuscús", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046772.png"}
+];
+
+const productos = datosProductos.map((prod) => {
+  return new Producto(prod.nombre, prod.tipo, prod.enlace);
+});
 
 
 // Poblaciones y códigos postales
 // Por simplicidad, solo soporta poblaciones/códigos postales en Cantabria.
-// Puede que la lista no esté 100% actualizada a 2026
 // Fuentes: https://www.uv.es/goerlich/Ivie/CodPost.html y https://códigospostales.es/listado-de-codigos-postales-de-espana/
 const poblaciones = {
   "Alfoz de Lloredo": [39320, 39329, 39525, 39526, 39539, 39590],
