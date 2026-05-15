@@ -1,12 +1,12 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const usuario = urlParams.get('usuario');
-const fechaLista = urlParams.get('lista') || new Date().toLocaleDateString('es-ES');
+const usuario = urlParams.get('user');
+const fechaLista = urlParams.get('list') || new Date().toISOString().split('T')[0];
 
 function getListFromStorage(usuario, fechaLista) {
     const storedLists = localStorage.getItem("l_" + usuario);
 
-    if (!storedLists) return;
+    if (!storedLists) return null;
 
     const userLists = JSON.parse(storedLists);
     

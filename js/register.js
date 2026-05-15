@@ -104,7 +104,7 @@ document.getElementById('codPostal').addEventListener("change", (e) => {
 document.getElementById('registerForm').addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const usuario = document.getElementById('usuario').value;
+    const usuario = document.getElementById('usuario').value.trim();
 
     if(localStorage.getItem('u_' + usuario)) {  // Usuario ya existe
         const divError = document.getElementById('errores');
@@ -114,14 +114,19 @@ document.getElementById('registerForm').addEventListener("submit", (e) => {
         return;
     }
 
-    const nombre = document.getElementById('nombre').value;
-    const apellidos = document.getElementById('apellidos').value;
-    const direccion = document.getElementById('direccion').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
+    const direccion = document.getElementById('direccion').value.trim();
     const poblacion = document.getElementById('poblacion').value;
     const codPostal = document.getElementById('codPostal').value;
     const telefono = document.getElementById('telefono').value;
     const email = document.getElementById('email').value;
     const contraseña = document.getElementById('contraseña').value;
+
+    if (!nombre || !apellidos || !direccion || !usuario) { // Por evitar que rellenen con espacios
+        alert("Todos los campos obligatorios deben estar rellenados.");
+    return;
+}
     
     const user = new Usuario(nombre, apellidos, direccion, poblacion, codPostal, telefono, email, usuario, contraseña);
 

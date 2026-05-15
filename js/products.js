@@ -1,8 +1,8 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const usuario = urlParams.get('usuario');
+const usuario = urlParams.get('user');
 
-const currentDate = new Date().toLocaleDateString('es-ES');
+const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD so they are easy to sort
 const currentList = new Lista(usuario, currentDate);
 let changesSaved = false;
 
@@ -21,7 +21,7 @@ tipos.forEach(tipo => {
     productos.forEach(producto => {
         if (producto.tipo === tipo[0]) {
             const productNode = document.createElement('li');
-            productNode.setAttribute('id', producto.nombre.replace(' ', '-'));
+            productNode.setAttribute('id', producto.nombre.replaceAll(' ', '-'));
             productNode.innerHTML = `
                 <h3>${producto.nombre}</h3>
                 <img src="${producto.enlace}" alt="${producto.nombre}" height="100px">`
@@ -29,7 +29,7 @@ tipos.forEach(tipo => {
             productNode.addEventListener("click", (e) => {
               const amountStr = prompt("¿Cantidad?", "1");
               const amount = isNaN(amountStr) ? 1 : parseInt(amountStr);
-              currentList.addProduct(e.currentTarget.id.replace('-', ' '), amount);
+              currentList.addProduct(e.currentTarget.id.replaceAll('-', ' '), amount);
               changesSaved = false;
             });
 
@@ -98,7 +98,7 @@ function redirect(page) {
     if (!confirmed) return;
   };
 
-  window.location.href = page + "?usuario=" + encodeURIComponent(usuario);
+  window.location.href = page + "?user=" + encodeURIComponent(usuario);
 }
 
 document.getElementById("show").addEventListener("click", (e) => {
