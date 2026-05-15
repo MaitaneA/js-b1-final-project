@@ -160,4 +160,18 @@ class Lista {
     set productos(newProducts) {
         this._productos = newProducts;
     }
+
+    addProduct(newProduct, amount) {
+        if (amount > 0) {
+            for (let i = 0; i < this._productos.length; i++) {
+                if (this._productos[i][0] === newProduct) { // In the list already, increase the amount
+                    this._productos[i][1] += amount;
+                    return;
+                }
+            };
+
+            // Not yet in the list, let's add it
+            this._productos.push([newProduct, amount]);
+        }
+    }
 }

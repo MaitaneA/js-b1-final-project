@@ -4,18 +4,25 @@
 // Los objetos que representan al usuario y la lista de la compra se guardarán utilizando el método localestorage de JavaScript.
 
 // Productos
-const tipos = ["Frutas y vegetales", "Panes y pastas", "Leche y quesos", "Carne y pescado", "Cereales y pastas"];
+const tipos = [
+  ["Frutas y vegetales", "127822"],
+  ["Panes y pastas", "129366"],
+  ["Leche y quesos", "129472"],
+  ["Carne y pescado", "129385"],
+  ["Cereales y pastas", "127806"]
+];
 
 const datosProductos = [
   // Frutas y vegetales (8)
-  {nombre: "Manzana", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/415/415682.png"},
-  {nombre: "Plátano", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590685.png"},
-  {nombre: "Tomate", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2909/2909763.png"},
-  {nombre: "Zanahoria", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590702.png"},
-  {nombre: "Lechuga", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713474.png"},
-  {nombre: "Brócoli", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/2346/2346998.png"},
+  {nombre: "Manzanas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/415/415682.png"},
+  {nombre: "Plátanos", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/3143/3143645.png"},
+  {nombre: "Tomates", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/1202/1202125.png"},
+  {nombre: "Zanahorias", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/883/883760.png"},
+  {nombre: "Lechugas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/15625/15625414.png"},
+  {nombre: "Brócoli", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/13988/13988686.png"},
   {nombre: "Fresas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590772.png"},
-  {nombre: "Uvas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590767.png"},
+  {nombre: "Uvas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/5376/5376074.png"},
+  {nombre: "Naranjas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590767.png"},
 
   // Panes y pastas (6)
   {nombre: "Pan blanco", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png"},

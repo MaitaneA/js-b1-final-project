@@ -47,12 +47,13 @@ input:invalid {
   border-color: red;
 }
 
-/* Style the buttons that are used to open and close the accordion panel */
+/* Products page sections */
 .productType {
   background-color: #eee;
   color: #444;
-  cursor: pointer;
-  padding: 18px;
+  /*font-size: 1.5em;
+  padding: 18px;*/
+  margin: 2px;
   width: 100%;
   text-align: left;
   border: none;
@@ -60,15 +61,27 @@ input:invalid {
   transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .productType:hover {
   background-color: #ccc;
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+.panel ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.panel li {
+  margin: 0;
+  cursor: pointer;
 }
