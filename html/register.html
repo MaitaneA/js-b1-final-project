@@ -19,26 +19,44 @@ en el localestorage y se abrirá de nuevo la página de login.
 </head>
 <body>
   <form name="register" id="registerForm" action="">
-    <label for="nombre">Nombre<span style="color: red;">*</span>:</label>
-    <input id="nombre" type="text" required>
-    <label for="apellidos">Apellidos<span style="color: red;">*</span>:</label>
-    <input id="apellidos" type="text" required>
-    <label for="direccion">Dirección<span style="color: red;">*</span>:</label>
-    <input id="direccion" type="text" required>
-    <label for="poblacion">Población:</label>
-    <select id="poblacion" name="poblaciones">
-      <option disabled selected value> -- selecciona población -- </option>
-    </select>
-    <label for="codPostal">Código postal:</label>
-    <input id="codPostal" type="number" min="1000" max="59999" placeholder="39770" title="Código postal en Cantabria">
-    <label for="telefono">Teléfono:</label>
-    <input id="telefono" type="tel" minlength="9" maxlength="9" pattern="(6|7|8|9)\d{8}" title="Introduce número expañol válido (sin el código de país)">
-    <label for="email">Correo electrónico:</label>
-    <input id="email" type="email">
-    <label for="usuario">Usuario<span style="color: red;">*</span>:</label>
-    <input id="usuario" type="text" required/>
-    <label for="contraseña">Contraseña<span style="color: red;">*</span>:</label>
-    <input id="contraseña" type="text" minlength="8" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=(?:.*[@$!%*?&]){2,}).*" title="Longitud mínima: 8 caracteres. Debe contener letras, números y al menos 2 caracteres especiales." required/>
+    <fieldset class="form-row">
+      <label for="nombre">Nombre<span style="color: red;">*</span>:</label>
+      <input id="nombre" type="text" required>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="apellidos">Apellidos<span style="color: red;">*</span>:</label>
+      <input id="apellidos" type="text" required>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="direccion">Dirección<span style="color: red;">*</span>:</label>
+      <input id="direccion" type="text" required>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="poblacion">Población:</label>
+      <select id="poblacion" name="poblaciones">
+        <option disabled selected value> -- selecciona población -- </option>
+      </select>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="codPostal">Código postal:</label>
+      <input id="codPostal" type="number" min="1000" max="59999" placeholder="39770" title="Código postal en Cantabria">
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" type="tel" minlength="9" maxlength="9" pattern="(6|7|8|9)\d{8}" title="Introduce número expañol válido (sin el código de país)">
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="email">Correo electrónico:</label>
+      <input id="email" type="email">
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="usuario">Usuario<span style="color: red;">*</span>:</label>
+      <input id="usuario" type="text" required/>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="contraseña">Contraseña<span style="color: red;">*</span>:</label>
+      <input id="contraseña" type="text" minlength="8" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=(?:.*[@$!%*?&]){2,}).*" title="Longitud mínima: 8 caracteres. Debe contener letras, números y al menos 2 caracteres especiales." required/>
+    </fieldset>
     <button id="sendForm" type="submit">Guardar</button>                
     <div id="errores" class="hidden">
     </div>

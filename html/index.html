@@ -16,21 +16,21 @@
 </head>
 <body>
   <form name="login" id="loginForm" action="">
-    <section>
-        <label for="usuario">Usuario:</label>
-        <input id="usuario" type="text" placeholder="user1" required/>
-    </section>
-    <section>
-        <label for="contraseña">Contraseña:</label>
-        <input id="contraseña" type="password" placeholder="pass1" required/>
-    </section>
-    <section>
-        <button id="sendForm" type="submit">Aceptar</button>
-        <button id="register" type="button">Nuevo usuario</button>
-    </section>
+    <fieldset class="form-row">
+      <label for="usuario">Usuario:</label>
+      <input id="usuario" type="text" required/>
+    </fieldset>
+    <fieldset class="form-row">
+      <label for="contraseña">Contraseña:</label>
+      <input id="contraseña" type="password"required/>
+    </fieldset>
+    <nav>
+      <button id="sendForm" type="submit">Aceptar</button>
+      <button id="register" type="button">Nuevo usuario</button>
+    </nav>
   </form>
-    <script src="../js/clases.js" defer></script>
-    <script src="../js/index.js" defer></script>
+  <script src="../js/clases.js" defer></script>
+  <script src="../js/index.js" defer></script>
 </body>
 </html>
 
