@@ -11,49 +11,48 @@ const tipos = [
   ["Carne y pescado", "129385"],
   ["Cereales y pastas", "127806"]
 ];
-
+//document.getElementsByClassName('main-icon-without-slide')[0].firstElementChild.getAttribute('src').trim()
 const datosProductos = [
   // Frutas y vegetales (8)
   {nombre: "Manzanas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/415/415682.png"},
   {nombre: "Plátanos", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/3143/3143645.png"},
   {nombre: "Tomates", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/1202/1202125.png"},
   {nombre: "Zanahorias", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/883/883760.png"},
-  {nombre: "Lechugas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/15625/15625414.png"},
+  {nombre: "Lechuga", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/15625/15625414.png"},
   {nombre: "Brócoli", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/13988/13988686.png"},
   {nombre: "Fresas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590772.png"},
   {nombre: "Uvas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/5376/5376074.png"},
   {nombre: "Naranjas", tipo: "Frutas y vegetales", enlace: "https://cdn-icons-png.flaticon.com/512/590/590767.png"},
 
   // Panes y pastas (6)
-  {nombre: "Pan blanco", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png"},
-  {nombre: "Barra de pan", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png"},
-  {nombre: "Croissant", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075976.png"},
-  {nombre: "Espaguetis", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
-  {nombre: "Macarrones", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135623.png"},
-  {nombre: "Pizza", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png"},
+  {nombre: "Pan de molde", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/7093/7093198.png"},
+  {nombre: "Barra de pan", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/3014/3014502.png"},
+  {nombre: "Croissant", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/7357/7357747.png"},
+  {nombre: "Espaguetis", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/17454/17454028.png"},
+  {nombre: "Macarrones", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/7419/7419140.png"},
+  {nombre: "Pan de pizza", tipo: "Panes y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png"},
 
   // Leche y quesos (6)
-  {nombre: "Leche", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png"},
-  {nombre: "Queso", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
-  {nombre: "Yogur", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/3050/3050153.png"},
-  {nombre: "Mantequilla", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713475.png"},
-  {nombre: "Nata", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046847.png"},
-  {nombre: "Leche sin lactosa", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png"},
+  {nombre: "Leche", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/5125/5125466.png"},
+  {nombre: "Queso", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/819/819827.png"},
+  {nombre: "Yogur", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/5318/5318811.png"},
+  {nombre: "Mantequilla", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/4670/4670983.png"},
+  {nombre: "Nata", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/5900/5900684.png"},
+  {nombre: "Leche sin lactosa", tipo: "Leche y quesos", enlace: "https://cdn-icons-png.flaticon.com/512/5125/5125321.png"},
 
   // Carne y pescado (6)
-  {nombre: "Pollo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046769.png"},
-  {nombre: "Ternera", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075978.png"},
-  {nombre: "Cerdo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1998/1998611.png"},
-  {nombre: "Salmón", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/3075/3075979.png"},
-  {nombre: "Atún", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046786.png"},
-  {nombre: "Gambas", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/2713/2713478.png"},
+  {nombre: "Muslos de pollo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/821/821023.png"},
+  {nombre: "Filete de ternera", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046769.png"},
+  {nombre: "Costillas de cerdo", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/815/815949.png"},
+  {nombre: "Salmón", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/17531/17531526.png"},
+  {nombre: "Atún", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/5371/5371168.png"},
+  {nombre: "Gambas", tipo: "Carne y pescado", enlace: "https://cdn-icons-png.flaticon.com/512/2970/2970030.png"},
 
   // Cereales y pastas (5)
-  {nombre: "Arroz", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046771.png"},
-  {nombre: "Avena", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046770.png"},
-  {nombre: "Cereales desayuno", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/135/135620.png"},
-  {nombre: "Quinoa", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046768.png"},
-  {nombre: "Cuscús", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/1046/1046772.png"}
+  {nombre: "Arroz", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/8512/8512339.png"},
+  {nombre: "Avena", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/5098/5098762.png"},
+  {nombre: "Cereales desayuno", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/16779/16779298.png"},
+  {nombre: "Quinoa", tipo: "Cereales y pastas", enlace: "https://cdn-icons-png.flaticon.com/512/11854/11854552.png"}
 ];
 
 const productos = datosProductos.map((prod) => {

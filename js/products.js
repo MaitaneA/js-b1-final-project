@@ -24,7 +24,7 @@ tipos.forEach(tipo => {
             productNode.setAttribute('id', producto.nombre.replaceAll(' ', '-'));
             productNode.innerHTML = `
                 <h3>${producto.nombre}</h3>
-                <img src="${producto.enlace}" alt="${producto.nombre}" height="100px">`
+                <img src="${producto.enlace}" alt="${producto.nombre}" height="128px">`
 
             productNode.addEventListener("click", (e) => {
               const amountStr = prompt("¿Cantidad?", "1");
