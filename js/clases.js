@@ -63,10 +63,6 @@ class Usuario {
     set contraseña(newPassword) {
         if (newPassword) this._contraseña = newPassword;
     }
-
-    validatePassword(contraseña) {  //Para evitar hacer un getter para la contraseña
-        return contraseña === this._contraseña;
-    }
 }
 
 class Producto {

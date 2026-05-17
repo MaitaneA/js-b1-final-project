@@ -1,7 +1,3 @@
-/*const testUser = new Usuario("John", "Smith", "C/ De la Nada 3", "Madrid", 32323, 600000000, "yo@yo.es", "user1", "pass1");
-*/
-
-
 // Añadir lista de opciones a la selección de población
 const poblacionesSelector = document.getElementById("poblacion");
 for (const pob in poblaciones){
@@ -69,36 +65,6 @@ document.getElementById('codPostal').addEventListener("change", (e) => {
         e.target.value = "";
     };
 });
-
-// Validación de la contraseña
-/*document.getElementById('contraseña').addEventListener("change", (e) => {
-    const contraseña = e.target.value;
-    
-    // debe contener mínimo 8 caracteres, letras, números y al menos dos caracteres especiales
-    if (contraseña.length < 8) {
-        document.getElementById('longitud').textContent = "&#10060; Debe tener un mínimo de 8 caracteres";
-        document.getElementById('validacionContraseña').classList.remove('hidden');
-    }
-
-    const regex1 = /(?=.*[a-zA-Z])/; // Letras
-    if (! regex1.test(contraseña)) {
-        document.getElementById('letras').textContent = "&#10060; Debe tener al menos 1 letra";
-        document.getElementById('validacionContraseña').classList.remove('hidden');
-    }
-
-    const regex2 = /(?=.*\d)/; // Números
-    if (! regex2.test(contraseña)) {
-        document.getElementById('numeros').textContent = "&#10060; Debe tener al menos 1 número";
-        document.getElementById('validacionContraseña').classList.remove('hidden');
-    }
-
-    const regex3 = /[@$!%*?&].*[@$!%*?&]/; // 2 caracteres especiales
-    if (! regex3.test(contraseña)) {
-        document.getElementById('caracteres').textContent = "&#10060; Debe tener al menos 2 caracteres especiales";
-        document.getElementById('validacionContraseña').classList.remove('hidden');
-    }
-});*/
-
 
 // Guardado de datos en localstorage
 document.getElementById('registerForm').addEventListener("submit", (e) => {

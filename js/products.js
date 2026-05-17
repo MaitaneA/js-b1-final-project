@@ -4,7 +4,6 @@ const usuario = urlParams.get('user');
 
 const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD so they are easy to sort
 const currentList = new Lista(usuario, currentDate);
-let changesSaved = false;
 
 // Build the main section with the products
 const template = document.getElementById('productType-template');
@@ -24,13 +23,12 @@ tipos.forEach(tipo => {
             productNode.setAttribute('id', producto.nombre.replaceAll(' ', '-'));
             productNode.innerHTML = `
                 <h3>${producto.nombre}</h3>
-                <img src="${producto.enlace}" alt="${producto.nombre}" height="128px">`
+                <img src="${producto.enlace}" alt="${producto.nombre}" height="100px">`
 
             productNode.addEventListener("click", (e) => {
               const amountStr = prompt("¿Cantidad?", "1");
               const amount = isNaN(amountStr) ? 1 : parseInt(amountStr);
               currentList.addProduct(e.currentTarget.id.replaceAll('-', ' '), amount);
-              changesSaved = false;
             });
 
             productsList.appendChild(productNode);
@@ -88,24 +86,14 @@ document.getElementById("save").addEventListener("click", (e) => {
 
   userLists.push(currentList);
   localStorage.setItem("l_" + usuario, JSON.stringify(userLists));
-  changesSaved = true;
 });
 
 // 'Mostrar' button
-function redirect(page) {
-  if (!changesSaved) {
-    const confirmed = window.confirm("Tienes cambios sin guardar, ¿seguro que quieres irte sin guardarlos primero?");
-    if (!confirmed) return;
-  };
-
-  window.location.href = page + "?user=" + encodeURIComponent(usuario);
-}
-
 document.getElementById("show").addEventListener("click", (e) => {
-  redirect("printable_list.html")
+  window.location.href = "printable_list.html" + "?user=" + encodeURIComponent(usuario) + "&list=" + currentList.fecha;
 });
 
 // 'Listas' button
 document.getElementById("lists").addEventListener("click", (e) => {
-  redirect("lists.html");
+  window.location.href = "lists.html" + "?user=" + encodeURIComponent(usuario);
 });
